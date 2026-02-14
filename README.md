@@ -5,59 +5,20 @@
 ![Maven](https://img.shields.io/badge/Maven-3.9+-blue)
 ![Build](https://img.shields.io/badge/Build-Passing-success)
 
-A full-stack Study Task Management web application built with **Spring Boot**.  
-It allows users to create, prioritize, update, complete, and delete study tasks through a RESTful API and a simple frontend interface.
 
----
+A small web application to create, prioritize, and complete study tasks.
 
-## 🚀 Features
+## Tech stack
+- Backend: Java + Spring Boot (REST API)
+- Frontend: HTML + CSS + Vanilla JavaScript (Fetch API)
+- Storage: JSON file on server (`data/tasks.json`)
 
-- Create new study tasks
-- View all tasks
-- Update task details and completion status
-- Delete tasks
-- Input validation (date format and priority)
-- File-based persistence using JSON
-- RESTful API with proper HTTP status codes
+## How to run (local)
 
----
-
-## 🛠 Tech Stack
-
-**Backend**
-- Java 17
-- Spring Boot 3
-- Spring Web (REST API)
-- Jakarta Validation
-
-**Frontend**
-- HTML
-- CSS
-- Vanilla JavaScript (Fetch API)
-
-**Build Tool**
+### Requirements
+- Java 17 (JDK)
 - Maven 3.9+
 
-**Storage**
-- JSON file (`data/tasks.json`)
-
----
-
-## 📋 Prerequisites
-
-Make sure you have the following installed:
-
-- Java 17 (JDK)
-- Apache Maven 3.9+
-- Git (to clone the repository)
-
-Verify installations:
-
-```bash
-java -version
-mvn -version
-
----
 ### Run the application
 From the project root:
 
@@ -69,3 +30,21 @@ Then open:
 - http://localhost:8080
 
 The UI is served from Spring Boot (`src/main/resources/static`).
+
+## REST API
+- `GET /api/tasks` – list tasks
+- `POST /api/tasks` – create task
+- `PUT /api/tasks/{id}` – update task (including done)
+- `DELETE /api/tasks/{id}` – delete task
+
+## Data model
+A task contains:
+- `id` (number)
+- `title` (string)
+- `dueDate` (string, `YYYY-MM-DD`)
+- `priority` (Low | Medium | High)
+- `done` (boolean)
+
+## Notes
+- Data is stored in `data/tasks.json` in the working directory.
+- For an MVP, this avoids database setup while still providing server-side persistence.

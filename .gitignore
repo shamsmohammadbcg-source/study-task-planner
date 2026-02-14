@@ -1,0 +1,19 @@
+# Maven / Java
+target/
+*.class
+*.log
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Local runtime data (keep the JSON file tracked or untracked depending on your preference)
+# If you want to keep sample data in git, comment this out.
+data/tasks.json
+data/tasks.tmp.json

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study Task Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Study Task Planner</h1>
+    <p class="subtitle">Create, prioritize, and complete your study tasks.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Add a task</h2>
+      <form id="taskForm" class="form">
+        <label>
+          Title
+          <input id="title" type="text" placeholder="e.g., Finish chapter 3 notes" required />
+        </label>
+
+        <div class="row">
+          <label>
+            Due date
+            <input id="dueDate" type="date" required />
+          </label>
+
+          <label>
+            Priority
+            <select id="priority" required>
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+        </div>
+
+        <button type="submit">Add task</button>
+        <p id="formError" class="error" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="row space-between align-center">
+        <h2>Tasks</h2>
+
+        <div class="filters" role="tablist" aria-label="Task filters">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="open" type="button">Open</button>
+          <button class="filter" data-filter="done" type="button">Done</button>
+        </div>
+      </div>
+
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+      <p id="emptyState" class="muted">No tasks yet. Add your first task above.</p>
+    </section>
+  </main>
+
+  <footer class="container muted small">
+    <p>IU DLBCSPJWD01 • Phase 2: Development/Reflection</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

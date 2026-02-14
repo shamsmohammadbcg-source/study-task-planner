@@ -56,3 +56,16 @@ Verify installations:
 ```bash
 java -version
 mvn -version
+
+---
+### Run the application
+From the project root:
+
+```bash
+mvn spring-boot:run
+```
+
+Then open:
+- http://localhost:8080
+
+The UI is served from Spring Boot (`src/main/resources/static`).
